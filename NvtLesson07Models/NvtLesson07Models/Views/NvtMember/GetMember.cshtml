@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Thông tin member";
+    var member = Model as NvtLesson07Models.Models.DataModels.NvtMember;
+}
+
+<div class="alert alert-info">
+    <h1>@ViewData["Title"]</h1>
+
+    @* <p>Member id: @ViewBag.Member.NvtMemberId</p>
+    <p>UserName: @ViewBag.Member.NvtUserName</p>
+    <p>UserName: @ViewBag.Member.NvtPassword</p>
+    <p>UserName: @ViewBag.Member.NvtFullName</p>
+    <p>UserName: @ViewBag.Member.NvtEmail</p> *@
+
+    <p>Memberid: @member.NvtMemberId</p>
+    <p>UserName: @member.NvtUserName</p>
+    <p>UserName: @member.NvtPassword</p>
+    <p>UserName: @member.NvtFullName</p>
+    <p>UserName: @member.NvtEmail</p>
+</div>

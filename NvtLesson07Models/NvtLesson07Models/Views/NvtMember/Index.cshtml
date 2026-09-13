@@ -1,0 +1,62 @@
+﻿@model IEnumerable<NvtLesson07Models.Models.DataModels.NvtMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="card p-3">
+    <h1>@ViewData["Title"]</h1>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary my-1">Thêm mới</a>
+    </p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvtMemberId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvtUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvtPassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvtFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NvtEmail)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvtMemberId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvtUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvtPassword)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvtFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NvtEmail)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
