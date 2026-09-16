@@ -1,0 +1,64 @@
+@model IEnumerable<NvtLesson08Models.Models.NvtMember>
+
+@{
+    ViewData["Title"] = "Danh sách thành viên";
+}
+
+<div class="card p-3">
+    <div class="card-header">
+        <h1>@ViewData["Title"]</h1>
+        <a asp-action="NvtCreate">Thêm mới</a>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NvtMemberId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NvtUserName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NvtPassword)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NvtFullName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NvtEmail)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NvtMemberId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NvtUserName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NvtPassword)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NvtFullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NvtEmail)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Sửa", "NvtEdit", new { id = item.NvtMemberId }) |
+                            @Html.ActionLink("Xem chi tiết", "NvtDetails", new { id = item.NvtMemberId }) |
+                            @Html.ActionLink("Xóa", "NvtDelete", new { id = item.NvtMemberId })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

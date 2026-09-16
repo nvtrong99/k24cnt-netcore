@@ -1,0 +1,59 @@
+@model NvtLesson08Models.Models.NvtMember
+
+@{
+    ViewData["Title"] = "Thêm mới thành viên";
+}
+
+<form asp-action="NvtCreate" method="post">
+    <div class="card p-3">
+        <div class="card-header">
+            <h1>@ViewData["Title"]</h1>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="NvtMemberId" class="control-label"></label>
+                        <input asp-for="NvtMemberId" class="form-control" />
+                        <span asp-validation-for="NvtMemberId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="NvtUserName" class="control-label"></label>
+                        <input asp-for="NvtUserName" class="form-control" />
+                        <span asp-validation-for="NvtUserName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="NvtPassword" class="control-label"></label>
+                        <input asp-for="NvtPassword" class="form-control" />
+                        <span asp-validation-for="NvtPassword" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="NvtFullName" class="control-label"></label>
+                        <input asp-for="NvtFullName" class="form-control" />
+                        <span asp-validation-for="NvtFullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="NvtEmail" class="control-label"></label>
+                        <input asp-for="NvtEmail" class="form-control" />
+                        <span asp-validation-for="NvtEmail" class="text-danger"></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer">
+            <div class="form-group">
+                <input type="submit" value="Ghi lại" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+            </div>
+        </div>
+    </div>
+</form>
