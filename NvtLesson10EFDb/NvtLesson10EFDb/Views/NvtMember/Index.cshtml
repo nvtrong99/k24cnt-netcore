@@ -1,0 +1,65 @@
+@model IEnumerable<NvtLesson10EFDb.Models.NvtMember>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtUseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NvtStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.NvtUseName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NvtPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NvtFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NvtEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NvtPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.NvtStatus)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
