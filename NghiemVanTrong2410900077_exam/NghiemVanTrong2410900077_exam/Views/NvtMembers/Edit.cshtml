@@ -1,0 +1,123 @@
+@model NghiemVanTrong2410900077_exam.Models.NvtMember
+
+@{
+    ViewData["Title"] = "Cập nhật thành viên";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+
+        <div class="card-header bg-warning">
+            <h3 class="mb-0">Cập nhật thành viên</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="Edit">
+
+                <input type="hidden" asp-for="Id" />
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name"
+                           class="form-label fw-bold">
+                        Họ và tên
+                    </label>
+
+                    <input asp-for="Name"
+                           class="form-control" />
+
+                    <span asp-validation-for="Name"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        Giới tính
+                    </label>
+
+                    <div class="form-check">
+                        <input asp-for="Gender"
+                               class="form-check-input"
+                               type="radio"
+                               value="true" />
+                        <label class="form-check-label">
+                            Nam
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input asp-for="Gender"
+                               class="form-check-input"
+                               type="radio"
+                               value="false" />
+                        <label class="form-check-label">
+                            Nữ
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="BirthDay"
+                           class="form-label fw-bold">
+                        Ngày sinh
+                    </label>
+
+                    <input asp-for="BirthDay"
+                           type="date"
+                           class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email"
+                           class="form-label fw-bold">
+                        Email
+                    </label>
+
+                    <input asp-for="Email"
+                           class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Phone"
+                           class="form-label fw-bold">
+                        Số điện thoại
+                    </label>
+
+                    <input asp-for="Phone"
+                           class="form-control" />
+                </div>
+
+                <div class="mb-3 form-check">
+                    <input asp-for="Active"
+                           class="form-check-input" />
+
+                    <label asp-for="Active"
+                           class="form-check-label">
+                        Hoạt động
+                    </label>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Cập nhật
+                </button>
+
+                <a asp-action="Index"
+                   class="btn btn-secondary">
+                    Quay lại
+                </a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

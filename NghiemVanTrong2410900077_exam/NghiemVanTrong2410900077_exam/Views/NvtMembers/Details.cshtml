@@ -1,0 +1,69 @@
+@model NghiemVanTrong2410900077_exam.Models.NvtMember
+
+@{
+    ViewData["Title"] = "Chi tiết thành viên";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+
+        <div class="card-header bg-info text-white">
+            <h3 class="mb-0">Chi tiết thành viên</h3>
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th width="30%">Họ và tên</th>
+                    <td>@Model.Name</td>
+                </tr>
+
+                <tr>
+                    <th>Giới tính</th>
+                    <td>
+                        @(Model.Gender == true ? "Nam" : "Nữ")
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Ngày sinh</th>
+                    <td>
+                        @(Model.BirthDay?.ToString("dd/MM/yyyy"))
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td>@Model.Email</td>
+                </tr>
+
+                <tr>
+                    <th>Số điện thoại</th>
+                    <td>@Model.Phone</td>
+                </tr>
+
+                <tr>
+                    <th>Trạng thái</th>
+                    <td>
+                        @(Model.Active == true ? "Hoạt động" : "Khóa")
+                    </td>
+                </tr>
+
+            </table>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.Id"
+               class="btn btn-warning">
+                Sửa
+            </a>
+
+            <a asp-action="Index"
+               class="btn btn-secondary">
+                Quay lại
+            </a>
+
+        </div>
+    </div>
+</div>
