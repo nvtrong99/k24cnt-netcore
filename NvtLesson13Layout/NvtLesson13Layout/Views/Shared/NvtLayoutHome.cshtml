@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/NvtLayoutHome.css"
+          asp-append-version="true" />
+
+    <style>
+        nav {
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="container my-1">
+        <div>
+            <a asp-controller="Products" asp-action="Index">
+                Danh sách sản phẩm
+            </a>
+
+            <a asp-controller="Products" asp-action="Search">
+                Tìm kiếm sản phẩm
+            </a>
+
+            <a asp-controller="Products" asp-action="Hots">
+                Sản phẩm bán chạy
+            </a>
+
+            <a asp-controller="Products" asp-action="About">
+                Giới thiệu
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p style="text-align: center;">
+            Mở cửa cho anh đê
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">
+                Privacy
+            </a>
+        </p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
